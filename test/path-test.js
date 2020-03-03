@@ -5,7 +5,7 @@ require("./pathEqual");
 
 tape("path is an instanceof path", function(test) {
   var p = path.path();
-  test.ok(p instanceof path.path);
+  test.ok(p instanceof path.Path);
   test.pathEqual(p, "");
   test.end();
 });

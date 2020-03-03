@@ -3,13 +3,14 @@ var tape = require("tape");
 var reNumber = /[-+]?(?:\d+\.\d+|\d+\.|\.\d+|\d+)(?:[eE][-]?\d+)?/g;
 
 tape.Test.prototype.pathEqual = function(actual, expected) {
-  actual = normalizePath(actual + "");
+  actual   = normalizePath(actual + "");
   expected = normalizePath(expected + "");
+  
+  const message  = "should be equal";
+  const operator = "pathEqual";
+
   this._assert(actual === expected, {
-    message: "should be equal",
-    operator: "pathEqual",
-    actual: actual,
-    expected: expected
+    message, operator, actual, expected
   });
 };
 
